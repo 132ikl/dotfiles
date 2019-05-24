@@ -1,0 +1,5 @@
+#!/bin/sh
+
+if [ -z "$1" ]; then input="$(cat -)"; else input="$1"; fi
+
+curl -s -d "long=$input" -d "format=json" https://ls.ikl.sh/ | jq -r '.["result"]' | xargs echo -n 

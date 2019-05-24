@@ -1,0 +1,36 @@
+#!/bin/sh
+
+if [ -z "$EDITOR" ]; then
+    EDITOR="vi"
+else
+    EDITOR="$EDITOR"
+fi
+
+if [ -z "$1" ]; then
+    echo "No config file provided. Type \"$(basename $0) --help\" for usage."
+    exit 1
+fi
+
+usage="usage: $(basename $0) [-h] CONFIG -- easily edit common configuration files 
+
+options:
+    -h  show this help text
+
+supported configs:
+    cfg: ~/.scripts/cfg
+    i3: ~/.config/i3/config
+    alias: ~/.config/aliasrc
+    keys: ~/.config/sxhkd/sxhkdrc"
+
+if [ "$1" = "-h" -o "$1" = "--help" ]; then
+    echo "$usage"
+    exit 0
+fi
+
+case "$1" in
+    "cfg") "$EDITOR" ~/.scripts/cfg;;
+    "i3") "$EDITOR" ~/.config/i3/config;;
+    "alias" ) "$EDITOR" ~/.config/aliasrc;;
+    "keys" ) "$EDITOR" ~/.config/sxhkd/sxhkdrc;;
+    *) echo "Config file $1 not found"
+esac

@@ -1,4 +1,4 @@
 alt + period
     bwmenu
-alt + o ; {q}
-    {qutebrowser}
+alt + o ; {q, f, n}
+    {qutebrowser, freetube-bin, "$TERMINAL" nvim}

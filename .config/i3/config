@@ -171,6 +171,9 @@ bindsym $mod+r mode "resize"
 
 # CUSTOM CONFIG
 
+# Misc i3
+focus_follows_mouse false
+
 # i3-gaps config
 for_window [class=".*"] border pixel 0
 gaps inner 10

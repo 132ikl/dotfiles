@@ -2,8 +2,9 @@
 # ~/.profile
 #
 
-# Add ~/.scripts to $PATH
+# $PATH additions
 export PATH=$PATH:~/.scripts/
+export PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 
 # Set profile variables
 export EDITOR="nvim"

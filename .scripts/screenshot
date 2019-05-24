@@ -1,2 +1,2 @@
 #!/bin/sh
-maim -s | upload
+maim -su | upload

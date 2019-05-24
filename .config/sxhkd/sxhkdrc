@@ -1,6 +1,6 @@
 alt + period
     bwmenu
-alt + o ; {q, f, n}
-    {qutebrowser, freetube-bin, "$TERMINAL" nvim}
+alt + o ; {q, y, n, f, m} 
+    {qutebrowser, freetube-bin, "$TERMINAL" nvim, firefox, "$TERMINAL" neomutt}
 alt + shift + p
     screenshot

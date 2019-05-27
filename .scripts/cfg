@@ -21,7 +21,8 @@ supported configs:
     i3: ~/.config/i3/config
     alias: ~/.config/aliasrc
     keys: ~/.config/sxhkd/sxhkdrc
-    mutt: ~/.mutt/muttrc"
+    mutt: ~/.mutt/muttrc
+    nvim: ~/.config/nvim/init.vim"
 
 if [ "$1" = "-h" -o "$1" = "--help" ]; then
     echo "$usage"
@@ -34,5 +35,6 @@ case "$1" in
     "alias") "$EDITOR" ~/.config/aliasrc;;
     "keys") "$EDITOR" ~/.config/sxhkd/sxhkdrc;;
     "mutt") "$EDITOR" ~/.mutt/muttrc;;
+    "nvim") "$EDITOR" ~/.config/nvim/init.vim;;
     *) echo "Config file $1 not found"
 esac

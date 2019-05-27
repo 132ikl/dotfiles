@@ -1,6 +1,8 @@
 alt + period
     bwmenu
-alt + o ; {q, y, n, f, m} 
-    {qutebrowser, freetube-bin, "$TERMINAL" nvim, firefox, "$TERMINAL" neomutt}
+alt + o ; {q, y, m, n} 
+    {qutebrowser, freetube-bin, "$TERMINAL" neomutt, "$TERMINAL" ncmpcpp}
 alt + shift + p
     screenshot
+alt + control + shift + p
+    maim -su | xclip -i -se c -t image/png

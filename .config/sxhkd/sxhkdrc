@@ -4,5 +4,5 @@ alt + o ; {q, y, m, n}
     {qutebrowser, freetube-bin, "$TERMINAL" neomutt, "$TERMINAL" ncmpcpp}
 alt + shift + p
     screenshot
-alt + control + shift + p
+super + shift + p
     maim -su | xclip -i -se c -t image/png

@@ -7,6 +7,9 @@ xinput set-prop pointer:"Logitech G300s Optical Gaming Mouse" "libinput Accel Sp
 # Swap caps lock and escape
 setxkbmap -option "caps:swapescape"
 
+# Set compose key
+setxkbmap -option "compose:menu"
+
 # Start compositor
 compton -b
 

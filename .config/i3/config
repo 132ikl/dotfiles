@@ -168,8 +168,10 @@ bar {
 
 # CUSTOM CONFIG
 
-# Misc i3
+# Base i3
 focus_follows_mouse false
+bindsym $mod+Shift+greater move workspace to output right
+bindsym $mod+Shift+less move workspace to output left
 
 # i3-gaps config
 for_window [class=".*"] border pixel 0

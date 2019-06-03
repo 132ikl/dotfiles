@@ -11,6 +11,9 @@ export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER="qutebrowser"
 
+# Misc.
+complete -d cd
+
 # Run .bashrc if exists and shell is bash
 echo "$0" | grep "bash$" >/dev/null && [ -f ~/.bashrc ] && source "$HOME/.bashrc"
 

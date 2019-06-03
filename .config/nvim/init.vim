@@ -16,3 +16,4 @@ set clipboard=unnamedplus
 
 " Automatic writes
 autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
+autocmd BufWritePost *i3/config !i3-msg reload

@@ -17,3 +17,5 @@ PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 # ssh-agent setup
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then ssh-agent | head -n-1 > ~/.ssh-agent-instance; fi
 if [[ ! "$SSH_AUTH_SOCK" ]]; then eval "$(<~/.ssh-agent-instance)"; fi
+# im lazy
+ssh-add -q ~/.ssh/github

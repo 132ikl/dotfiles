@@ -1,0 +1,24 @@
+#
+# ~/.config/aliasrc
+#
+
+# Shell shortcuts
+alias cu='cd ..'
+
+# Color commands
+alias ls='ls --color=auto'
+
+# Pipe to clipboard
+alias c="xclip -i -se c" 
+
+# trash-cli aliases
+alias tp="trash-put"
+
+# ranger
+alias r="ranger"
+
+# easy downloading
+alias wget="curl -O"
+
+# package management
+alias whatprovides="yay -Fs"

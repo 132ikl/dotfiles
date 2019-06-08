@@ -22,7 +22,10 @@ supported configs:
     alias: ~/.config/aliasrc
     keys: ~/.config/sxhkd/sxhkdrc
     mutt: ~/.mutt/muttrc
-    nvim: ~/.config/nvim/init.vim"
+    nvim: ~/.config/nvim/init.vim
+    bash: ~/.bashrc
+    p: ~/.profile
+    dunst: ~/.config/dunst/dunstrc"
 
 if [ "$1" = "-h" -o "$1" = "--help" ]; then
     echo "$usage"
@@ -36,5 +39,8 @@ case "$1" in
     "keys") "$EDITOR" ~/.config/sxhkd/sxhkdrc;;
     "mutt") "$EDITOR" ~/.mutt/muttrc;;
     "nvim") "$EDITOR" ~/.config/nvim/init.vim;;
+    "bash") "$EDITOR" ~/.bashrc;;
+    "profile") "$EDITOR" ~/.profile;;
+    "dunst") "$EDITOR" ~/.config/dunst/dunstrc;;
     *) echo "Config file $1 not found"
 esac

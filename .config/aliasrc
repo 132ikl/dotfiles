@@ -8,11 +8,11 @@ alias cu='cd ..'
 # Color commands
 alias ls='ls --color=auto'
 
+# trash-cli
+alias tp="trash-put"
+
 # Pipe to clipboard
 alias c="xclip -i -se c" 
-
-# trash-cli aliases
-alias tp="trash-put"
 
 # ranger
 alias r="ranger"

@@ -11,8 +11,9 @@ Plug 'sheerun/vim-polyglot'
 Plug 'joshdick/onedark.vim'
 Plug 'tpope/vim-commentary'
 Plug 'itchyny/lightline.vim'
+Plug 'junegunn/goyo.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'ap/vim-buftabline'
+Plug 'haya14busa/incsearch.vim'
 Plug 'tpope/vim-surround'
 Plug 'python/black'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
@@ -49,7 +50,8 @@ tnoremap <C-l> <C-\><C-n><C-w>l
 " Xorg clipboard register
 map <C-c> "+
 " Save all and run last command
-map <C-;> :wa<CR> <bar> :!!<CR>
+nnoremap <C-n> :wa<bar>bd!<CR><bar>:belowright 10split \| :terminal<CR><bar>:execute "terminal " . build_command<CR>
+map <leader>; :let build_command="
 " qutebrowser tabs 
 nnoremap <silent> J :bp<CR>
 nnoremap <silent> K :bn<CR>
@@ -57,13 +59,20 @@ nnoremap <silent> K :bn<CR>
 map <leader>s <C-u>
 map <leader>d <C-d>
 
+" incsearch
+let g:incsearch#auto_nohlsearch = 1
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
+
 " Automatic commands
 autocmd BufWritePre *.py execute ':Black'
 autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
 " NERDTree autocmds
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " don't know why this doesn't work without autocmd?
 autocmd FileType python :hi semshiSelected ctermfg=none guifg=none ctermbg=none guibg=none cterm=bold gui=bold
 

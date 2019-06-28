@@ -2,19 +2,20 @@
 # ~/.config/aliasrc
 #
 
-# Shell shortcuts
+# shortcuts
 alias cu='cd ..'
 
 # Color commands
 alias ls='ls --color=auto'
 
 # trash-cli
-alias tp="trash-put"
 
 # Pipe to clipboard
 alias c="xclip -i -se c" 
 
-# ranger
+# Basic shortcuts
+alias x="dtrx"
+alias tp="trash-put"
 alias r="ranger"
 
 # easy downloading

@@ -1,7 +1,11 @@
 alt + period
     bwmenu
-alt + o ; {q, y, m, n} 
-    {qutebrowser, freetube-bin, "$TERMINAL" neomutt, "$TERMINAL" ncmpcpp}
+# open shortcuts
+alt + o ; {q, y, m, n, s} 
+    {qutebrowser, freetube-bin, "$TERMINAL" neomutt, "$TERMINAL" ncmpcpp, steam-runtime}
+# more open shorcuts
+alt + shift + o ; {s, d}
+    {slack, discord}
 alt + shift + p
     screenshot
 super + shift + p

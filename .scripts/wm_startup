@@ -1,2 +1,2 @@
+sleep 3 && ~/.scripts/local_startup
 feh --bg-fill ~/Documents/Pictures/wallpaper.jpg
-~/.scripts/local_startup

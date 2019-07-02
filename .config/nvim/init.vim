@@ -12,6 +12,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'tpope/vim-commentary'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'kassio/neoterm'
 Plug 'scrooloose/nerdtree'
 Plug 'haya14busa/incsearch.vim'
 Plug 'tpope/vim-surround'
@@ -33,10 +34,9 @@ set smartcase
 set number relativenumber
 
 " Conveinence binds
-map <C-L> :Black<CR>
+map <Leader>l :Black<CR>
 map <leader>c gcc
 nnoremap <silent> <Leader>v :NERDTreeFind<CR>
-map <leader>t :belowright 10split \| :terminal<CR> 
 tnoremap <Esc> <C-\><C-n>
 " hjkl window nav
 map <C-h> <C-w>h
@@ -49,9 +49,12 @@ tnoremap <C-k> <C-\><C-n><C-w>k
 tnoremap <C-l> <C-\><C-n><C-w>l
 " Xorg clipboard register
 map <C-c> "+
-" Save all and run last command
-nnoremap <C-n> :wa<bar>bd!<CR><bar>:belowright 10split \| :terminal<CR><bar>:execute "terminal " . build_command<CR>
+" Terminal stuff
+let g:neoterm_default_mod='belowright'
+let g:neoterm_size=10
+map <leader>t :Tnew<CR>
 map <leader>; :let build_command="
+nnoremap <silent> <C-n> :wa<bar>:Tkill<bar>:execute "T " . build_command<CR>
 " qutebrowser tabs 
 nnoremap <silent> J :bp<CR>
 nnoremap <silent> K :bn<CR>
@@ -69,10 +72,10 @@ map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 
 " Automatic commands
-autocmd BufWritePre *.py execute ':Black'
+autocmd BufWritePre *.py execute ':silent! Black'
 autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
-" NERDTree autocmds
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let g:black_fast=1
 " don't know why this doesn't work without autocmd?
 autocmd FileType python :hi semshiSelected ctermfg=none guifg=none ctermbg=none guibg=none cterm=bold gui=bold
 

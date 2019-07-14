@@ -8,18 +8,16 @@ alias cu='cd ..'
 # Color commands
 alias ls='ls --color=auto'
 
-# trash-cli
-
 # Pipe to clipboard
 alias c="xclip -i -se c" 
 
 # Basic shortcuts
-alias x="dtrx"
 alias tp="trash-put"
 alias r="ranger"
 
-# easy downloading
-alias wget="curl -O"
+# Easy downloading
+## using OLDPWD because cd - writes to stdout and OLDPWD will send to ~ if unset
+dl() { if [ -n "$2" ]; then cd "$2"; fi; curl -OJ $1; if [ -n "$2" ]; then cd $OLDPWD; fi; }
 
-# package management
+# Package management
 alias whatprovides="yay -Fs"

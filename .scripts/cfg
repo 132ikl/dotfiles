@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ -z "$EDITOR" ]; then
     EDITOR="vi"
@@ -11,36 +11,38 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
+declare -A configs
+configs["cfg"]="~/.scripts/cfg"
+configs["i3"]="~/.config/i3/config"
+configs["alias"]="~/.config/aliasrc"
+configs["keys"]="~/.config/sxhkd/sxhkdrc"
+configs["mutt"]="~/.mutt/muttrc"
+configs["nvim"]="~/.config/nvim/init.vim"
+configs["bash"]="~/.bashrc"
+configs["p"]="~/.profile"
+configs["dunst"]="~/.config/dunst/dunstrc"
+configs["st"]="~/.programs/st/config.h"
+
 usage="usage: $(basename $0) [-h] CONFIG -- easily edit common configuration files 
 
 options:
     -h  show this help text
 
-supported configs:
-    cfg: ~/.scripts/cfg
-    i3: ~/.config/i3/config
-    alias: ~/.config/aliasrc
-    keys: ~/.config/sxhkd/sxhkdrc
-    mutt: ~/.mutt/muttrc
-    nvim: ~/.config/nvim/init.vim
-    bash: ~/.bashrc
-    p: ~/.profile
-    dunst: ~/.config/dunst/dunstrc"
+supported configs:"
 
 if [ "$1" = "-h" -o "$1" = "--help" ]; then
     echo "$usage"
+    for i in "${!configs[@]}"; do
+        echo "     ${i}: ${configs[$i]}"
+    done
     exit 0
 fi
 
-case "$1" in
-    "cfg") "$EDITOR" ~/.scripts/cfg;;
-    "i3") "$EDITOR" ~/.config/i3/config;;
-    "alias") "$EDITOR" ~/.config/aliasrc;;
-    "keys") "$EDITOR" ~/.config/sxhkd/sxhkdrc;;
-    "mutt") "$EDITOR" ~/.mutt/muttrc;;
-    "nvim") "$EDITOR" ~/.config/nvim/init.vim;;
-    "bash") "$EDITOR" ~/.bashrc;;
-    "profile") "$EDITOR" ~/.profile;;
-    "dunst") "$EDITOR" ~/.config/dunst/dunstrc;;
-    *) echo "Config file $1 not found"
-esac
+for i in "${!configs[@]}"; do
+    if [ "$i" = "$1" ]; then
+        eval temp_path=${configs[$i]}
+        "$EDITOR" "$temp_path"
+        exit 0
+    fi
+done
+echo "Config file $1 not found. Type \"$(basename $0) --help\" for supported configs."

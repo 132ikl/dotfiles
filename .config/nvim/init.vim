@@ -74,6 +74,9 @@ map g# <Plug>(incsearch-nohl-g#)
 " Automatic commands
 autocmd BufWritePre *.py execute ':silent! Black'
 autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
+autocmd BufWritePost *Xresources !xrdb %
+autocmd BufWritePost config.h !make -C %:p:h
+" NERDTree autocmds
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:black_fast=1
 " don't know why this doesn't work without autocmd?

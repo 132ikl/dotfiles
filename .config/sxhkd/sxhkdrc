@@ -1,6 +1,8 @@
 alt + period
     bwmenu
 # open shortcuts
+alt + Return
+    ~/.programs/st/st
 alt + o ; {q, y, m, n, s} 
     {qutebrowser, freetube-bin, "$TERMINAL" neomutt, "$TERMINAL" ncmpcpp, steam-runtime}
 # more open shorcuts

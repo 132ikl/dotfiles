@@ -187,6 +187,10 @@ for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
 for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
 for_window [title="^Steam Keyboard$"] floating enable
 
+# Put commonly used apps in certain workspaces
+assign [title="Slack"] 1
+assign [title="Discord"] 1
+
 # i3-gaps config
 for_window [class=".*"] border pixel 0
 gaps inner 10

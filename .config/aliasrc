@@ -17,7 +17,7 @@ alias r="ranger"
 
 # Easy downloading
 ## using OLDPWD because cd - writes to stdout and OLDPWD will send to ~ if unset
-dl() { if [ -n "$2" ]; then cd "$2"; fi; curl -OJ $1; if [ -n "$2" ]; then cd $OLDPWD; fi; }
+dl() { if [ -n "$2" ]; then cd "$2"; fi; curl -LOJ $1; if [ -n "$2" ]; then cd $OLDPWD; fi; }
 
 # Package management
 alias whatprovides="yay -Fs"

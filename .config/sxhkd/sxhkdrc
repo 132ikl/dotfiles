@@ -1,5 +1,5 @@
 alt + period
-    bwmenu
+    bwmenu --auto-lock 3600
 # open shortcuts
 alt + Return
     ~/.programs/st/st

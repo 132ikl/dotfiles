@@ -15,7 +15,7 @@ compton -b
 systemctl --user import-environment DISPLAY
 
 # Initalize Xresources
-[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+xrdb -load ~/.Xresources
 
 # Start i3
 exec i3

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Clear clipboard
+echo -n '' | xclip -i -se c
+
+# Upload output of stdin to linx
+url="$(curl -s -H 'Accept: application/json' -H 'LinxRandomize: yes' -T - https://fs.ikl.sh/upload/ | jq -r '.["direct_url"]' <&0)"
+
+# Shorten URL and copy to clipboard
+echo "$url" | xclip -i -se c

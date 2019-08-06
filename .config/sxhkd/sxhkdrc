@@ -13,7 +13,7 @@ alt + shift + p
 super + shift + p
     maim -su | xclip -i -se c -t image/png
 super + shift + control + c
-    xclip -o -se c -t image/png  | upload
+    xclip -o -se c -t image/png | upload
 alt + u
     pactl set-sink-volume @DEFAULT_SINK@ -2%
 alt + i

@@ -14,6 +14,7 @@ alias c="xclip -i -se c"
 # Basic shortcuts
 alias tp="trash-put"
 alias r="ranger"
+alias git-unstage="git rm --cached"
 
 # Easy downloading
 ## using OLDPWD because cd - writes to stdout and OLDPWD will send to ~ if unset

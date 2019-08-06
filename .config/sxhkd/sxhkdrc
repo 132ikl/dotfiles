@@ -9,7 +9,7 @@ alt + o ; {q, y, m, n, s}
 alt + shift + o ; {s, d}
     {slack, discord}
 alt + shift + p
-    screenshot
+    maim -su | upload
 super + shift + p
     maim -su | xclip -i -se c -t image/png
 super + shift + control + c

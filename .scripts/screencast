@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+pgrep -f yaxg && yaxg && exit
+yaxg -s /tmp/screencast
+cat /tmp/screencast.webm | upload

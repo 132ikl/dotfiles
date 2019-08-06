@@ -193,7 +193,6 @@ assign [title="Discord"] 1
 
 # i3-gaps config
 for_window [class=".*"] border pixel 0
-# border_radius 15
 gaps inner 10
 gaps outer 3
 

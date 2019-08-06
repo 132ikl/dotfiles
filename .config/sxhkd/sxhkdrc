@@ -22,3 +22,5 @@ alt + shift + u
     pactl set-sink-volume @DEFAULT_SINK@ -5%
 alt + shift + i
     pactl set-sink-volume @DEFAULT_SINK@ +5%
+alt + shift + s
+    ~/.scripts/screencast

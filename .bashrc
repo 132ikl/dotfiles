@@ -7,10 +7,11 @@
 
 # prompt
 get_w(){ if [ "$(pwd)" = "$(readlink -f $HOME)" ] || [ "$(pwd)" = "$(readlink -f $HOME)/" ];then W='~';else W=$(echo $(pwd)|sed 's@'"$(readlink -f $HOME)"'@~@');fi;if [ $(echo $W|grep -o '/'|wc -l) -gt 5 ];then echo $W|cut -d'/' -f1-5|xargs -I{} echo {}"/../${W##*/}";else echo $W;fi }
-gitstatus(){ color="$(tput setaf 6)"; branch="$(git branch 2>/dev/null | grep '^*' | colrm 1 2)"; git diff-index --quiet HEAD 2>&- || color="$(tput setaf 3)"; if [ ! -z "$branch" ]; then echo " $color($branch)"; fi; }
-setps1(){ PS1="\[$(tput bold)\]$(tput setaf 6)\][\[$(tput setaf 3)\]\u\[$(tput setaf 6)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 1)\]"$(get_w)"\[$(tput setaf 6)\]]\[$(tput bold)\]\$(gitstatus)$(tput setaf 7)\] \\$ \[$(tput sgr0)\]"; }
+git_status(){ branch="$(git branch 2>/dev/null | grep '^*' | colrm 1 2)"; if [ ! -z "$branch" ]; then echo " ($branch)"; fi; }
+git_color(){ color="$(tput setaf 6)"; git diff-index --quiet HEAD 2>&- || color="$(tput setaf 3)"; echo "$color"; }
+setps1(){ PS1="\[$(tput bold)\]\[$(tput setaf 6)\][\[$(tput setaf 3)\]\u\[$(tput setaf 6)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 1)\]"$(get_w)"\[$(tput setaf 6)\]]\[$(tput bold)\]\[$(git_color)\]\$(git_status)\[$(tput setaf 7)\] \\$ \[$(tput sgr0)\]"; }
 PROMPT_COMMAND=setps1
-
+export PATH="$PATH:/home/steven/.gradle/cache/extract/frc2019/roborio/bin"
 # vi
 set -o vi
 

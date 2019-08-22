@@ -3,7 +3,8 @@
 #
 
 # shortcuts
-alias cu='cd ..'
+# cd up $1 amount of directories, default 1
+cu(){ cds=${1:-1}; for i in $(seq 1 $cds); do cd ..; done }
 
 # Color commands
 alias ls='ls --color=auto'
@@ -14,7 +15,7 @@ alias c="xclip -i -se c"
 # Basic shortcuts
 alias tp="trash-put"
 alias r="ranger"
-alias git-unstage="git rm --cached"
+alias git-untrack="git rm --cached"
 
 # Easy downloading
 ## using OLDPWD because cd - writes to stdout and OLDPWD will send to ~ if unset

@@ -19,6 +19,10 @@ set -o vi
 [ -f /usr/share/fzf/key-bindings.bash ] && source /usr/share/fzf/key-bindings.bash 
 [ -f /usr/share/fzf/completion.bash ] && source /usr/share/fzf/completion.bash 
 
+# add more history
+HISTSIZE=-1
+HISTFILESIZE=-1
+
 # register bash aliases
 [ -f "$(readlink -f $HOME)/.config/aliasrc" ] && source "$(readlink -f $HOME)/.config/aliasrc"
 

@@ -24,3 +24,5 @@ alt + shift + i
     pactl set-sink-volume @DEFAULT_SINK@ +5%
 alt + shift + s
     ~/.scripts/screencast
+ctrl + shift + period
+    cat /dev/urandom | tr -dc '!@#$%^&*_A-Z-a-z-0-9' | head -c16 | xclip -i -se c

@@ -16,9 +16,20 @@ alias tp="trash-put"
 alias r="ranger"
 alias git-unstage="git rm --cached"
 
+# youtube-dl
+alias yta='youtube-dl --external-downloader aria2c --external-downloader-args "-j 16 -s 8 -x 16 -k 1M" -x --audio-format opus --audio-quality 0'
+alias ytv='youtube-dl --external-downloader aria2c --external-downloader-args "-j 16 -s 8 -x 16 -k 1M" -f bestvideo+bestaudio --merge-output-format mkv'
+
+# systemd
+alias ss="sudo systemctl"
+alias ssr="sudo systemctl restart"
+alias sss="sudo systemctl start"
+
+# docker
+# probably a better way to do this but i have no internet lol
+alias debian="sudo docker run -v \$(pwd):/\$(pwd | awk -F/ '{ for (i = NF; i > 0; --i) { print \$i; exit 0 }; }') --rm -it debian:buster /bin/bash"
+alias ubuntu="sudo docker run -v \$(pwd):/\$(pwd | awk -F/ '{ for (i = NF; i > 0; --i) { print \$i; exit 0 }; }') --rm -it ubuntu:bionic /bin/bash"
+
 # Easy downloading
 ## using OLDPWD because cd - writes to stdout and OLDPWD will send to ~ if unset
-dl() { if [ -n "$2" ]; then cd "$2"; fi; curl -LOJ $1; if [ -n "$2" ]; then cd $OLDPWD; fi; }
-
-# Package management
-alias whatprovides="yay -Fs"
+dl() { curl -LOJ "$1"; if [ -n "$2" ]; then mv "$1" "$2"; fi; }

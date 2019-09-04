@@ -17,6 +17,10 @@ alias tp="trash-put"
 alias r="ranger"
 alias git-untrack="git rm --cached"
 
+# magic wormhole
+alias ws="wormhole send"
+alias wr="wormhole recieve"
+
 # Easy downloading
 ## using OLDPWD because cd - writes to stdout and OLDPWD will send to ~ if unset
 dl() { if [ -n "$2" ]; then cd "$2"; fi; curl -LOJ $1; if [ -n "$2" ]; then cd $OLDPWD; fi; }

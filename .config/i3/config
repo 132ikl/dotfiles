@@ -170,10 +170,15 @@ bar {
 
 # CUSTOM CONFIG
 
+mode "passthrough" {
+        bindsym $mod+Shift+Ctrl+P exec "i3-msg mode default; sxhkd & disown"
+}
+
 # Base i3
 focus_follows_mouse false
 bindsym $mod+Shift+greater move workspace to output right
 bindsym $mod+Shift+less move workspace to output left
+bindsym $mod+Shift+Ctrl+P exec "i3-msg mode passthrough; pkill sxhkd"
 
 # Steam
 for_window [class="^Steam$" title="^Friends$"] floating enable

@@ -5,15 +5,14 @@ alt + Return
     ~/.programs/st/st
 alt + o ; {q, y, m, n, s} 
     {qutebrowser, freetube-bin, "$TERMINAL" neomutt, "$TERMINAL" ncmpcpp, steam-runtime}
-# more open shorcuts
-alt + shift + o ; {s, d}
-    {slack, discord}
-alt + shift + p
-    maim -su | upload
+alt + shift + {o, p}
+    maim -su -d {2, 0} | upload
 super + shift + p
     maim -su | xclip -i -se c -t image/png
 super + shift + control + c
     xclip -o -se c -t image/png | upload
+alt + shift + semicolon
+    notify-send "Stopwatch" "$(~/.scripts/stopwatch)"
 alt + u
     pactl set-sink-volume @DEFAULT_SINK@ -2%
 alt + i

@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
-if pkill -0 -f yaxg; then >/dev/null yaxg && cat /tmp/screencast.webm | upload-long && exit; fi
+if pkill -0 -f yaxg; then >/dev/null yaxg && cat /tmp/screencast.webm | upload_long && exit; fi
 yaxg -s /tmp/screencast 1>&-

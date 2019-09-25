@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+CTIME=$(date +%s)    
+LOCATION="$(readlink -f ~/.cache/stopwatch)"
+if [ -f "$LOCATION" ]; then    
+        OTIME=$(cat "$LOCATION")
+        echo Time since stopwatch started: "$(date -d @$(echo $CTIME-$OTIME | bc) -u +%H:%M:%S)"
+        rm "$LOCATION"
+else    
+        echo "Started stopwatch"
+        echo $CTIME > "$LOCATION"    
+fi 

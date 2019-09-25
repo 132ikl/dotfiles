@@ -1,36 +1,23 @@
-! special
-*.foreground:   #282C34
-/* *.background:   #282C34 */
-*.cursorColor:  #ABB2BF
+!! Set default font and font size:
+st.termname: st-256color
+st.font: DejaVu Sans Mono-11
+st.borderpx: 0
 
-! black
-*.color0:       #282C34
-*.color8:       #3E4452
-
-! red
-*.color1:       #E06C75
-*.color9:       #BE5046
-
-! green
-*.color2:       #98C379
-*.color10:      #98C379
-
-! yellow
-*.color3:       #E5C07B
-*.color11:      #D19A66
-
-! blue
-*.color4:       #61AFEF
-*.color12:      #61AFEF
-
-! magenta
-*.color5:       #C678DD
-*.color13:      #C678DD
-
-! cyan
-*.color6:       #56B6C2
-*.color14:      #56B6C2
-
-! white
-*.color7:       #ABB2BF
-*.color15:      #5C6370
+!! Font options (OneDark)
+st.background:   #ABB2BF
+st.color0:       #282C34
+st.color1:       #E06C75
+st.color2:       #98C379
+st.color3:       #E5C07B
+st.color4:       #61AFEF
+st.color5:       #C678DD
+st.color6:       #56B6C2
+st.color7:       #ABB2BF
+st.color8:       #3E4452
+st.color9:       #BE5046
+st.color10:      #98C379
+st.color11:      #D19A66
+st.color12:      #61AFEF
+st.color13:      #C678DD
+st.color14:      #56B6C2
+st.color15:      #5C6370

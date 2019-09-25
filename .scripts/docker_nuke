@@ -1,0 +1,4 @@
+sudo -v
+sudo docker rm -v $(sudo docker ps -aq) 2>&-
+sudo docker rmi $(sudo docker images -q) 2>&-
+sudo docker volume rm $(sudo docker volume ls -q) 2>&-

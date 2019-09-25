@@ -195,6 +195,7 @@ for_window [title="^Steam Keyboard$"] floating enable
 # Put commonly used apps in certain workspaces
 assign [title="Slack"] 1
 assign [title="Discord"] 1
+assign [title="Thunderbird"] 1
 
 # i3-gaps config
 for_window [class=".*"] border pixel 0

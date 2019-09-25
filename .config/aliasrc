@@ -15,11 +15,15 @@ alias c="xclip -i -se c"
 # Basic shortcuts
 alias tp="trash-put"
 alias r="ranger"
-alias git-untrack="git rm --cached"
+alias unstage="git rm --cached"
+alias t="rsync -aP"
 
 # magic wormhole
 alias ws="wormhole send"
 alias wr="wormhole recieve"
+
+# docker
+alias debian="sudo docker run -v \$(pwd):/\$(pwd | awk -F/ '{ for (i = NF; i > 0; --i) { print \$i; exit 0 }; }') --rm -it debian:buster /bin/bash"
 
 # Easy downloading
 ## using OLDPWD because cd - writes to stdout and OLDPWD will send to ~ if unset

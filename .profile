@@ -2,6 +2,8 @@
 # ~/.profile
 #
 
+source ~/.config/local_profile
+
 # $PATH additions
 export PATH=$PATH:~/.scripts/
 export PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"

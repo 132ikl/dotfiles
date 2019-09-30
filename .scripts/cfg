@@ -22,6 +22,7 @@ configs["bash"]="~/.bashrc"
 configs["p"]="~/.profile"
 configs["dunst"]="~/.config/dunst/dunstrc"
 configs["st"]="~/.programs/st/config.h"
+configs["lp"]="~/.config/local_profile"
 
 usage="usage: $(basename $0) [-h] CONFIG -- easily edit common configuration files 
 

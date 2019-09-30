@@ -4,7 +4,9 @@ alt + period
 alt + Return
     ~/.programs/st/st
 alt + o ; {q, y, m, n, s} 
-    {qutebrowser, freetube-bin, "$TERMINAL" neomutt, "$TERMINAL" ncmpcpp, steam-runtime}
+    {qutebrowser, freetube-bin, "$TERMINAL" neomutt, steam-runtime}
+alt + shift + m; {o, p, i, u}
+    {"$TERMINAL" ncmpcpp, mpc toggle, mpc volume +5, mpc volume -5}
 alt + shift + {o, p}
     maim -su -d {2, 0} | upload
 super + shift + p
@@ -13,13 +15,15 @@ super + shift + control + c
     xclip -o -se c -t image/png | upload
 alt + shift + semicolon
     notify-send "Stopwatch" "$(~/.scripts/stopwatch)"
+ctrl + shift + period
+    ~/.scripts/gen_password | xclip -i -se c
 alt + u
-    pactl set-sink-volume @DEFAULT_SINK@ -2%
+    pactl set-sink-volume @DEFAULT_SINK@ -2%; pkill -RTMIN+10 i3blocks
 alt + i
-    pactl set-sink-volume @DEFAULT_SINK@ +2%
+    pactl set-sink-volume @DEFAULT_SINK@ +2%; pkill -RTMIN+10 i3blocks
 alt + shift + u
-    pactl set-sink-volume @DEFAULT_SINK@ -5%
+    pactl set-sink-volume @DEFAULT_SINK@ -5%; pkill -RTMIN+10 i3blocks
 alt + shift + i
-    pactl set-sink-volume @DEFAULT_SINK@ +5%
+    pactl set-sink-volume @DEFAULT_SINK@ +5%; pkill -RTMIN+10 i3blocks
 alt + shift + s
     ~/.scripts/screencast

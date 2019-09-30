@@ -5,6 +5,8 @@
 # $PATH additions
 export PATH=$PATH:~/.scripts/
 export PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/.emacs/bin
 
 # Set profile variables
 export EDITOR="nvim"

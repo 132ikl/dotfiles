@@ -32,3 +32,4 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then eval "$(<~/.ssh-agent-instance)"; fi
 
 # For some reason github doesn't auto add
 ssh-add -q ~/.ssh/github
+ssh-add -q ~/.ssh/gitlab

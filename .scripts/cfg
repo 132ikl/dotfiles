@@ -23,6 +23,7 @@ configs["p"]="~/.profile"
 configs["dunst"]="~/.config/dunst/dunstrc"
 configs["st"]="~/.programs/st/config.h"
 configs["lp"]="~/.config/local_profile"
+configs["emacs"]="~/.doom.d/config.el"
 
 usage="usage: $(basename $0) [-h] CONFIG -- easily edit common configuration files 
 

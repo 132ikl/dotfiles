@@ -3,10 +3,10 @@ alt + period
 # open shortcuts
 alt + Return
     ~/.programs/st/st
-alt + o ; {q, y, m, n, s} 
-    {qutebrowser, freetube-bin, "$TERMINAL" neomutt, steam-runtime}
-alt + shift + m; {o, p, i, u}
-    {"$TERMINAL" ncmpcpp, mpc toggle, mpc volume +5, mpc volume -5}
+alt + o ; {q, y, s, e}
+    {qutebrowser, freetube-bin, steam-runtime, emacs}
+alt + shift + m; {o, p, i, u, n, b}
+    {"$TERMINAL" ncmpcpp, mpc toggle, mpc volume +5, mpc volume -5, mpc next, mpc prev}
 alt + shift + {o, p}
     maim -su -d {2, 0} | upload
 super + shift + p

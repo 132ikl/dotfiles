@@ -68,12 +68,18 @@
    "/DONE" 'file))
 
 ;;; EVIL SETTINGS
+(defun toggle-tabs ()
+  (interactive)
+  'centaur-tabs-mode
+  'centaur-tabs-mode
+)
 (define-key evil-normal-state-map (kbd "<f8>") 'neotree-toggle)
 (define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
 (define-key evil-normal-state-map (kbd "C-j") 'evil-window-down)
 (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
 (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
 (define-key evil-normal-state-map (kbd ", c") 'evil-commentary-line)
+(define-key evil-normal-state-map (kbd "C-c t") 'toggle-tabs)
 (define-key evil-normal-state-map (kbd "C-c m") (lambda() (interactive)(load-file "~/.doom.d/config.el")))
 (setq display-line-numbers-type 'relative)
 ;;;

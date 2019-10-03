@@ -18,7 +18,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'haya14busa/incsearch.vim'
 Plug 'tpope/vim-surround'
 Plug 'python/black'
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'cskeeters/vim-smooth-scroll'
 call plug#end()
 
@@ -81,7 +80,6 @@ autocmd BufWritePost config.h !make -C %:p:h
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:black_fast=1
 " don't know why this doesn't work without autocmd?
-autocmd FileType python :hi semshiSelected ctermfg=none guifg=none ctermbg=none guibg=none cterm=bold gui=bold
 
 " A E S T E T I C
 let g:lightline = {'colorscheme': 'onedark'}

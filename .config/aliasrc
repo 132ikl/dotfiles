@@ -17,9 +17,10 @@ alias tp="trash-put"
 alias r="ranger"
 alias unstage="git rm --cached"
 alias t="rsync -aP"
-alias nvim="echo Use e!; false"
+# alias nvim="echo Use e!; false"
 alias e="$EDITOR"
 alias se="sudoedit"
+alias findnodot="find . -not -path '*/\.*'"
 
 # magic wormhole
 alias ws="wormhole send"

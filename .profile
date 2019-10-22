@@ -11,9 +11,9 @@ export PATH=$PATH:~/.local/bin
 export PATH=$PATH:~/.emacs/bin
 
 # Set profile variables
-export EDITOR="emacs"
+export EDITOR="nvim"
 export TERMINAL="st"
-export BROWSER="qutebrowser"
+export BROWSER="firefox-developer-edition"
 
 # Misc.
 complete -d cd

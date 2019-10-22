@@ -3,8 +3,8 @@ alt + period
 # open shortcuts
 alt + Return
     ~/.programs/st/st
-alt + o ; {q, y, s, e}
-    {qutebrowser, freetube-bin, steam-runtime, emacs}
+alt + o ; {q, y, s, e, f}
+    {firefox-developer-edition, freetube-bin, steam-runtime, emacs, firefox-developer-edition}
 alt + shift + m; {o, p, i, u, n, b}
     {"$TERMINAL" ncmpcpp, mpc toggle, mpc volume +5, mpc volume -5, mpc next, mpc prev}
 alt + shift + {o, p}

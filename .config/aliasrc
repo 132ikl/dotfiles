@@ -20,6 +20,7 @@ alias t="rsync -aP"
 alias e="$EDITOR"
 alias se="sudoedit"
 alias findnodot="find . -not -path '*/\.*'"
+alias qc="git add .; git commit -m \"\$(date +%F)\"; git push origin master"
 
 # magic wormhole
 alias ws="wormhole send"

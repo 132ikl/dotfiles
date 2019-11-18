@@ -14,3 +14,4 @@
 (package! evil-commentary)
 (package! python-black)
 (package! centaur-tabs)
+(require centaur-tabs)

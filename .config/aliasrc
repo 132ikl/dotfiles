@@ -15,12 +15,15 @@ alias c="xclip -i -se c"
 # Basic shortcuts
 alias tp="trash-put"
 alias r="ranger"
-alias unstage="git rm --cached"
 alias t="rsync -aP"
 alias e="$EDITOR"
 alias se="sudoedit"
 alias findnodot="find . -not -path '*/\.*'"
+
+# git
+alias gu="git rm --cached"
 alias qc="git add .; git commit -m \"\$(date +%F)\"; git push origin master"
+alias gpom="git pull origin master"
 
 # magic wormhole
 alias ws="wormhole send"
@@ -28,6 +31,9 @@ alias wr="wormhole recieve"
 
 # docker
 alias debian="sudo docker run -v \$(pwd):/\$(pwd | awk -F/ '{ for (i = NF; i > 0; --i) { print \$i; exit 0 }; }') --rm -it debian:buster /bin/bash"
+
+# tmux
+alias tmux="TERM=screen-256color tmux"
 
 # Easy downloading
 ## using OLDPWD because cd - writes to stdout and OLDPWD will send to ~ if unset

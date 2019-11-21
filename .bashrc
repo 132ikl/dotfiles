@@ -24,6 +24,8 @@ set -o vi
 # set history options
 shopt -s histappend
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+HISTSIZE=
+HISTFILESIZE=
 
 # ssh-agent setup
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then ssh-agent | head -n-1 > ~/.ssh-agent-instance; fi

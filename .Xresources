@@ -1,7 +1,7 @@
 !! Set default font and font size:
 st.termname: st-256color
 st.font: DejaVu Sans Mono-12
-st.borderpx: 0
+st.borderpx: 4
 
 !! Font options (OneDark)
 st.background:   #ABB2BF

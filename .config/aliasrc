@@ -29,6 +29,11 @@ alias gpom="git pull origin master"
 alias ws="wormhole send"
 alias wr="wormhole recieve"
 
+# git
+alias qc="git add .; git commit -m \"\$(date +%F)\"; git push origin master"
+alias push="git push origin \$(git branch | grep \* | cut -d ' ' -f2)"
+alias pull="git pull origin \$(git branch | grep \* | cut -d ' ' -f2)"
+
 # docker
 alias debian="sudo docker run -v \$(pwd):/\$(pwd | awk -F/ '{ for (i = NF; i > 0; --i) { print \$i; exit 0 }; }') --rm -it debian:buster /bin/bash"
 

@@ -22,4 +22,4 @@ complete -d cd
 echo "$0" | grep "bash$" >/dev/null && [ -f ~/.bashrc ] && source "$HOME/.bashrc"
 
 # Start graphical server if i3 is not running in tty1
-[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x i3 >/dev/null && exec startx
+[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x i3 >/dev/null && [[ ! -e .suspend-xsession ]] && exec startx

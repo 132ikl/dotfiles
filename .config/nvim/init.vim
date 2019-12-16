@@ -19,6 +19,7 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'tpope/vim-surround'
 Plug 'python/black'
 Plug 'cskeeters/vim-smooth-scroll'
+Plug 'fisadev/vim-isort'
 call plug#end()
 
 " General display and tab stuff
@@ -72,6 +73,7 @@ map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 
 " Automatic commands
+autocmd BufWritePre *.py execute ':silent! Isort'
 autocmd BufWritePre *.py execute ':silent! Black'
 autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
 autocmd BufWritePost *Xresources !xrdb %

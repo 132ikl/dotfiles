@@ -43,6 +43,7 @@ alias tmux="TERM=screen-256color tmux"
 # Easy downloading
 ## using OLDPWD because cd - writes to stdout and OLDPWD will send to ~ if unset
 dl() { if [ -n "$2" ]; then cd "$2"; fi; curl -LOJ $1; if [ -n "$2" ]; then cd $OLDPWD; fi; }
+tardl() { curl -s -L --output - "$1" | tar xfz -; }
 replace() { egrep -lRZ "$1" . | xargs -0 -l sed -i -e "s/$1/$2/g"; }
 
 # Package management

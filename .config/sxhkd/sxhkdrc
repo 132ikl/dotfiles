@@ -13,6 +13,8 @@ super + shift + p
     maim -su | xclip -i -se c -t image/png
 super + shift + control + c
     xclip -o -se c -t image/png | upload
+alt + shift + ctrl + s
+    xclip -o -se c | short | xclip -i -se c
 alt + shift + semicolon
     notify-send "Stopwatch" "$(~/.scripts/stopwatch)"
 ctrl + shift + period

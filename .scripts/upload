@@ -1,14 +1,14 @@
 #!/bin/sh
 
+# $1 file name
+# $2 short url
+
 # Clear clipboard
 echo -n '' | xclip -i -se c
 
-if [ -z "$1" ]; then
-    url="$(curl -s -H 'Accept: application/json' -H 'LinxRandomize: yes' -T - https://fs.ikl.sh/upload/ | jq -r '.["direct_url"]' <&0)"
-    short "$url" | xclip -i -se c
-else
-    echo "$1"
-    url="$(curl -s -H 'Accept: application/json' -H 'LinxRandomize: yes' -T \"$1\" https://fs.ikl.sh/upload/ | jq -r '.["direct_url"]' <&0)"
-    short "$url"
+path="-"
+if [ ! -z "$1" ]; then
+    path="$1"
 fi
-
+url="$(curl -s -H 'Accept: application/json' -H 'LinxRandomize: yes' -T $path https://fs.ikl.sh/upload/ | jq -r '.["direct_url"]' <&0)"
+short "$url" "$2" | xclip -i -se c

@@ -2,4 +2,8 @@
 
 if [ -z "$1" ]; then input="$(cat -)"; else input="$1"; fi
 
-curl -s -d "long=$input" -d "format=json" https://ls.ikl.sh/ | jq -r '.["result"]' | xargs echo -n 
+if [ -z "$2" ]; then
+    curl -s -H "Accept: application/json" -d "long=$input" https://ls.ikl.sh/ | jq -r '.["result"]' | xargs echo -n 
+else
+    curl -s -H "Accept: application/json" -d "short=$2" -d "long=$input" https://ls.ikl.sh/ | jq -r '.["result"]' | xargs echo -n 
+fi

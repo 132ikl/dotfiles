@@ -1,0 +1,28 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+	1) setsid "$TERMINAL" -e yay; pkill -RTMIN+11 i3blocks & ;;
+esac
+
+if ! updates_arch=$(checkupdates 2> /dev/null | wc -l ); then
+    updates_arch=0
+fi
+
+if ! updates_aur=$(yay -Quaq 2> /dev/null | wc -l); then
+    updates_aur=0
+fi
+
+color="#c9c9c9"
+
+packagelist='linux nvidia'
+for package in $(checkupdates | cut -d" " -f1); do
+	for i in $packagelist; do
+		if [ "$i" == "$package" ]; then
+			color="#ff8787"
+		fi
+	done
+done
+
+echo $updates_arch 📦 $updates_aur
+echo $updates_arch 📦 $updates_aur
+echo $color

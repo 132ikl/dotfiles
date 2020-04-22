@@ -21,5 +21,10 @@ eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets)
 # Initalize Xresources
 xrdb -load ~/.Xresources
 
+# set audio settings
+~/.scripts/setup_pulse
+pulsemixer --set-volume=75
+
+
 # Start i3
 exec i3

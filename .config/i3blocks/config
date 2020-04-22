@@ -2,6 +2,10 @@ command=~/.config/i3blocks/scripts/$BLOCK_NAME
 separator_block_width=15
 markup=pango
 
+[pkg]
+interval=120
+signal=11
+
 [volume]
 interval=once
 signal=10

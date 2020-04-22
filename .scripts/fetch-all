@@ -1,0 +1,1 @@
+find ~/ -type d -path '*.git' | grep -v ~/'\.' | parallel -j 6 'pushd "{}"; git fetch --all; git -c pack.threads=4 gc --aggressive --no-prune --auto; popd'

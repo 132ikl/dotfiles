@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+systemctl --user restart cool-server
+systemctl --user restart mindcrack-server

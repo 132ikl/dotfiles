@@ -1,0 +1,16 @@
+#!/bin/bash
+OUTPUT_DEVICE="alsa_output.pci-0000_00_1f.3.analog-stereo"
+INPUT_DEVICE="alsa_input.usb-MICE_MICROPHONE_CAD_GXL2400USB_201505-00.mono-fallback"
+pactl load-module module-null-sink sink_name="MicAndSFX" sink_properties=device.description="MicAndSFX"
+pactl load-module module-null-sink sink_name="SFX" sink_properties=device.description="SFX"
+
+pactl load-module module-loopback latency_msec=1 sink="MicAndSFX" source="$INPUT_DEVICE"
+pactl load-module module-loopback latency_msec=1 sink="MicAndSFX" source="SFX.monitor"
+pactl load-module module-loopback latency_msec=1 sink="$OUTPUT_DEVICE" source="SFX.monitor"
+
+
+pactl load-module module-remap-source master="SFX.monitor" master_channel_map=front-left,front-right channels=2 channel_map=mono,mono
+pactl load-module module-remap-source master="MicAndSFX.monitor" master_channel_map=front-left,front-right channels=2 channel_map=mono,mono
+
+pactl set-default-source "MicAndSFX.monitor.remapped"
+pactl set-default-sink "$OUTPUT_DEVICE"

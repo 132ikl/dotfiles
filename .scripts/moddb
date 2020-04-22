@@ -1,0 +1,3 @@
+curl -Lo /tmp/moddb "$1"
+cd "/home/steven/.local/share/Steam/steamapps/sourcemods"
+dtrx /tmp/moddb

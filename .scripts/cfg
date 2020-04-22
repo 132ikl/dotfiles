@@ -24,6 +24,7 @@ configs["dunst"]="~/.config/dunst/dunstrc"
 configs["st"]="~/.programs/st/config.h"
 configs["lp"]="~/.config/local_profile"
 configs["emacs"]="~/.doom.d/config.el"
+configs["i3blocks"]="~/.config/i3blocks/config"
 
 usage="usage: $(basename $0) [-h] CONFIG -- easily edit common configuration files 
 

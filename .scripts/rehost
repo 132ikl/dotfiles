@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if xclip -t image/png -o -se c || grep PNG; then
+    xclip -t image/png -o -se c | upload
+else
+    xclip -o -se c | xargs curl -L | upload
+fi

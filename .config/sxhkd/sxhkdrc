@@ -17,16 +17,16 @@ alt + shift + ctrl + s
     xclip -o -se c | short | xclip -i -se c
 ctrl + shift + period
     ~/.scripts/gen_password | xclip -i -se c
-alt + u
-    pactl set-sink-volume @DEFAULT_SINK@ -2%; pkill -RTMIN+10 i3blocks
-alt + i
-    pactl set-sink-volume @DEFAULT_SINK@ +2%; pkill -RTMIN+10 i3blocks
 alt + shift + u
     pactl set-sink-volume @DEFAULT_SINK@ -5%; pkill -RTMIN+10 i3blocks
 alt + shift + i
     pactl set-sink-volume @DEFAULT_SINK@ +5%; pkill -RTMIN+10 i3blocks
 alt + shift + s
     ~/.scripts/screencast
+alt + u
+    ~/.scripts/sound_menu
+alt + y
+    pkill -f "Documents/Sounds"
 @super + j
     DISPLAY=:0 xdotool key 1 key e sleep 0.05 mousemove 2187 532 sleep 0.05 click 1 sleep 0.05 mousemove 1839 569 sleep 0.05 key 1 sleep 0.05 key e sleep 0.05 click 3 key e sleep 0.05 mousemove 1839 569 sleep 0.05 key 1 key e sleep 0.05 click 3
 @super + h

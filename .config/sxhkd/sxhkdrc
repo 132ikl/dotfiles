@@ -1,8 +1,11 @@
 alt + period
     /usr/bin/bwmenu --auto-lock 3600 > /home/steven/oh
-# open shortcuts
 alt + Return
     ~/.programs/st/st
+alt + shift + d
+    ~/.programs/dmenu/dmenu_run
+alt + d
+    j4-dmenu-desktop
 alt + o ; {q, y, s, e, f}
     {firefox-developer-edition, "$TERMINAL" ~/YouTube/.start.sh, steam-runtime, emacs, firefox-developer-edition}
 alt + shift + m; {o, p, i, u, n, b}

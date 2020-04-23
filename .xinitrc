@@ -15,8 +15,8 @@ compton -b
 systemctl --user import-environment DISPLAY
 
 # gnome keyring
-source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets)
+#source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
+#eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets)
 
 # Initalize Xresources
 xrdb -load ~/.Xresources

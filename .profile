@@ -8,6 +8,7 @@ source ~/.config/local_profile
 export PATH=$PATH:~/.scripts/
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:~/.emacs/bin
+export CDPATH=$CDPATH:~/Projects/
 
 # Set profile variables
 export EDITOR="nvim"

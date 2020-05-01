@@ -7,7 +7,7 @@
 cu(){ cds=${1:-1}; for i in $(seq 1 $cds); do cd ..; done }
 
 # Color commands
-alias ls='ls --color=auto'
+alias ls='exa'
 
 # Pipe to clipboard
 alias c="xclip -i -se c" 
@@ -45,7 +45,7 @@ alias tmux="TERM=screen-256color tmux"
 dl() { if [ -n "$2" ]; then cd "$2"; fi; curl -LOJ $1; if [ -n "$2" ]; then cd $OLDPWD; fi; }
 tardl() { curl -s -L --output - "$1" | tar xfz -; }
 replace() { egrep -lRZ "$1" . | xargs -0 -l sed -i -e "s/$1/$2/g"; }
-cd() { builtin cd "$*" >/dev/null; }
+cd() { if [ -z "$1" ]; then cd ~; else builtin cd "$*" >/dev/null; fi; }
 yadmqc() { yadm add -u; yadm commit -m "$(date +%F)"; yadm push; }
 
 # Package management

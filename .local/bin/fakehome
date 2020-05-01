@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Get the real path of this script
+SCRIPT=$(readlink -f "$0")
+CMD="$(basename $0)"
+
+# Create the fake HOME environment variable:
+export HOME="${XDG_DATA_HOME:-$HOME/.local/share}/$CMD-home"
+
+# Find and exec the first file in the PATH with the same name as the symlink:
+which -a "$CMD" | {
+  while read -r EXEPATH; do
+    if [ "$(readlink -f $EXEPATH)" != "$SCRIPT" ]; then
+      exec "$EXEPATH" "$@"
+      exit 0
+    fi
+  done
+  echo "Couldn't find executable shadowed by $CMD" >&2
+  exit 1
+}

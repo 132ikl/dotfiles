@@ -27,6 +27,8 @@ PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 HISTSIZE=-1
 HISTFILESIZE=-1
 
+LESSHISTFILE="~/.local/share/.lesshist"
+
 # ssh-agent setup
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then ssh-agent | head -n-1 > ~/.ssh-agent-instance; fi
 if [[ ! "$SSH_AUTH_SOCK" ]]; then eval "$(<~/.ssh-agent-instance)"; fi

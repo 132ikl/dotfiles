@@ -1,5 +1,5 @@
 alt + period
-    /usr/bin/bwmenu --auto-lock 3600 > /home/steven/oh
+    /usr/bin/bwmenu --auto-lock 3600
 alt + Return
     ~/.programs/st/st
 alt + shift + d
@@ -10,8 +10,10 @@ alt + o ; {q, y, s, e, f}
     {firefox-developer-edition, "$TERMINAL" ~/YouTube/.start.sh, steam-runtime, emacs, firefox-developer-edition}
 alt + shift + m; {o, p, i, u, n, b, m}
     {"$TERMINAL" ncmpcpp, mpc toggle, mpc volume +5, mpc volume -5, mpc next, mpc prev, ~/.scripts/restart_song}
-alt + shift + {o, p}
-    maim -su -d {2, 0} | upload
+alt + shift + o
+    maim -su -d 1 | upload && mpv /usr/share/sounds/freedesktop/stereo/camera-shutter.oga
+alt + shift + p 
+    maim -su | upload
 super + shift + p
     maim -su | xclip -i -se c -t image/png
 super + shift + control + c

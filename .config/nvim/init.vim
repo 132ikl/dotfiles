@@ -17,9 +17,11 @@ Plug 'kassio/neoterm'
 Plug 'scrooloose/nerdtree'
 Plug 'haya14busa/incsearch.vim'
 Plug 'tpope/vim-surround'
-Plug 'python/black'
 Plug 'cskeeters/vim-smooth-scroll'
 Plug 'fisadev/vim-isort'
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+Plug 'google/vim-glaive'
 call plug#end()
 
 " General display and tab stuff
@@ -35,7 +37,6 @@ set smartcase
 set number relativenumber
 
 " Conveinence binds
-map <Leader>l :Black<CR>
 map <leader>c gcc
 nnoremap <silent> <Leader>v :NERDTreeFind<CR>
 tnoremap <Esc> <C-\><C-n>
@@ -73,15 +74,27 @@ map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 
 " Automatic commands
-autocmd BufWritePre *.py execute ':silent! Isort'
-autocmd BufWritePre *.py execute ':silent! Black'
 autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
 autocmd BufWritePost *Xresources !xrdb %
 autocmd BufWritePost config.h !make -C %:p:h
 " NERDTree autocmds
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let g:black_fast=1
-" don't know why this doesn't work without autocmd?
+" auto code fmt
+augroup autoformat_settings
+  autocmd FileType bzl AutoFormatBuffer buildifier
+  autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+  autocmd FileType dart AutoFormatBuffer dartfmt
+  autocmd FileType go AutoFormatBuffer gofmt
+  autocmd FileType gn AutoFormatBuffer gn
+  autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
+  autocmd FileType java AutoFormatBuffer google-java-format
+  autocmd FileType python AutoFormatBuffer black
+  autocmd FileType rust AutoFormatBuffer rustfmt
+  autocmd FileType vue AutoFormatBuffer prettier
+augroup END
+
+" ignore virtualenv
+let g:python_host_prog='/usr/bin/python'
 
 " A E S T E T I C
 let g:lightline = {'colorscheme': 'onedark'}

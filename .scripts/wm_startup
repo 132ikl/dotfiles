@@ -1,2 +1,2 @@
 sleep 3 && ~/.scripts/local_startup
-feh --bg-fill ~/Documents/Pictures/wallpaper
+feh --no-fehbg --bg-fill ~/Documents/Pictures/wallpaper

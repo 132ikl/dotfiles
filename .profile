@@ -5,10 +5,28 @@
 source ~/.config/local_profile
 
 # $PATH additions
-export PATH=$PATH:~/.scripts/
-export PATH=$PATH:~/.local/bin
-export PATH=$PATH:~/.emacs/bin
+export PATH=~/.scripts/:$PATH
+export PATH=~/.local/bin:$PATH
+export PATH=~/.local/bin/fakehomes:$PATH
+export PATH=~/.emacs/bin:$PATH
 export CDPATH=$CDPATH:~/Projects/
+
+# config config
+export XDG_CACHE_HOME=~/.cache
+export XDG_CONFIG_HOME=~/.config
+export XDG_DATA_HOME=~/.local/share
+
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
+export IPYTHONDIR="$XDG_CONFIG_HOME"/jupyter
+export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
+export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel
+export PYTHONSTARTUP="$XDG_CONFIG_HOME"/python/startup.py
+
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
 
 # Set profile variables
 export EDITOR="nvim"

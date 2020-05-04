@@ -30,8 +30,8 @@ HISTFILESIZE=-1
 LESSHISTFILE="~/.local/share/.lesshist"
 
 # ssh-agent setup
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then ssh-agent | head -n-1 > ~/.ssh-agent-instance; fi
-if [[ ! "$SSH_AUTH_SOCK" ]]; then eval "$(<~/.ssh-agent-instance)"; fi
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then ssh-agent | head -n-1 > ~/.cache/ssh-agent-instance; fi
+if [[ ! "$SSH_AUTH_SOCK" ]]; then eval "$(<~/.cache/ssh-agent-instance)"; fi
 
 # For some reason github doesn't auto add
 ssh-add -q ~/.ssh/github

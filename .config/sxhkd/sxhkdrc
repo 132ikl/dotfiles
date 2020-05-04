@@ -30,6 +30,8 @@ alt + shift + s
     ~/.scripts/screencast
 alt + u
     ~/.scripts/sound_menu
+super + u
+    ~/.scripts/download_sound
 alt + y
     pkill -f "Documents/Sounds"
 @super + j

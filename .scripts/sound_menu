@@ -2,6 +2,6 @@
 
 FOLDER="/home/steven/Documents/Sounds/"
 
-FILE=$(ls -1 $FOLDER | sed -e 's/\.wav$//' | rofi -dmenu)
+FILE=$(ls -1 $FOLDER | grep wav | sed -e 's/\.wav$//' | rofi -dmenu)
 if [ -z "$FILE" ]; then exit 0; fi
-mpv --audio-device="pulse/SFX" --speed=1 "$FOLDER/$FILE.wav" --volume=50
+mpv --audio-device="pulse/SFX" --speed=1 "$FOLDER/$FILE.wav" --volume=75

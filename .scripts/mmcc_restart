@@ -1,30 +1,32 @@
 #!/bin/bash -e
+if [[ -z "$1" ]]; then
+    echo "Must supply restart phrase"
+    exit 0
+fi
 sleep 3
-xdotool type "say Restarting server in 30 seconds" 
+xdotool type "say ${1^} server in 30 seconds" 
 xdotool key Return
 sleep 10
-xdotool type "say Restarting server in 20 seconds" 
+xdotool type "say ${1^} server in 20 seconds" 
 xdotool key Return
 sleep 10
-xdotool type "say Restarting server in 10 seconds" 
+xdotool type "say ${1^} server in 10 seconds" 
 xdotool key Return
 sleep 5
-xdotool type "say Restarting server in 5 seconds" 
+xdotool type "say ${1^} server in 5 seconds" 
 xdotool key Return
 sleep 1
-xdotool type "say Restarting server in 4 seconds" 
+xdotool type "say ${1^} server in 4 seconds" 
 xdotool key Return
 sleep 1
-xdotool type "say Restarting server in 3 seconds" 
+xdotool type "say ${1^} server in 3 seconds" 
 xdotool key Return
 sleep 1
-xdotool type "say Restarting server in 2 seconds" 
+xdotool type "say ${1^} server in 2 seconds" 
 xdotool key Return
 sleep 1
-xdotool type "say Restarting server in 1 second" 
+xdotool type "say ${1^} server in 1 second" 
 xdotool key Return
 sleep 1
 xdotool type "stop" 
 xdotool key Return
-sleep 10
-xdotool keydown Ctrl key c keyup Ctrl

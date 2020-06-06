@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-if xclip -t image/png -o -se c || grep PNG; then
-    xclip -t image/png -o -se c | upload
-else
+mimetype=$(xclip -o -se c | file --mime-type -b -)
+if [[ "$mimetype" == "text/plain" ]]; then
     xclip -o -se c | xargs curl -L | upload
+else
+    xclip -t image/png -o -se c | upload
 fi

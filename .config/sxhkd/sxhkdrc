@@ -33,10 +33,12 @@ alt + u
 super + u
     ~/.scripts/download_sound
 alt + y
-    pkill -f "Documents/Sounds"
+    ~/.scripts/sound_fade
 @super + j
     DISPLAY=:0 xdotool key 1 key e sleep 0.05 mousemove 2187 532 sleep 0.05 click 1 sleep 0.05 mousemove 1839 569 sleep 0.05 key 1 sleep 0.05 key e sleep 0.05 click 3 key e sleep 0.05 mousemove 1839 569 sleep 0.05 key 1 key e sleep 0.05 click 3
 @super + h
     DISPLAY=:0 xdotool key 1 key e sleep 0.05 mousemove 2187 532 sleep 0.05 click 1 sleep 0.05 mousemove 1839 652 sleep 0.05 key 1 sleep 0.05 key e sleep 0.05 click 3 key e sleep 0.05 mousemove 1839 652 sleep 0.05 key 1 key e sleep 0.05 click 3
 @super + k
     xdotool type "!r1d20"; sleep 0.05; xdotool key Return
+@super + e
+    rofi -modi emoji -show emoji; xdotool type $(xclip -o -se c)

@@ -10,6 +10,7 @@ export PATH=~/.local/bin:$PATH
 export PATH=~/.local/bin/fakehomes:$PATH
 export PATH=~/.emacs/bin:$PATH
 export CDPATH=$CDPATH:~/Projects/
+export CDPATH=$CDPATH:~/Programs/
 
 # config config
 export XDG_CACHE_HOME=~/.cache

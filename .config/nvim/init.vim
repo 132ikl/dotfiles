@@ -22,6 +22,7 @@ Plug 'fisadev/vim-isort'
 Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
 Plug 'google/vim-glaive'
+Plug 'junegunn/goyo.vim'
 call plug#end()
 
 " General display and tab stuff
@@ -109,3 +110,5 @@ if (empty($TMUX))
   endif
 endif
 colorscheme onedark
+
+let g:goyo_width=85

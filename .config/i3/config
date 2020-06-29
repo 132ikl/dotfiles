@@ -108,11 +108,16 @@ assign [title="Slack"] 1
 assign [title="Discord"] 1
 assign [title="Spotify"] 1
 assign [title="Thunderbird"] 1
+assign [title="Riot"] 1
 
 # i3-gaps config
 for_window [class=".*"] border pixel 0
 gaps inner 10
 gaps outer 3
+
+# splash config       
+for_window [class="SPLASH"] border none
+for_window [class="SPLASH"] floating enable
 
 # Startup script
 exec ~/.scripts/i3_startup

@@ -26,6 +26,8 @@ alt + shift + u
     pactl set-sink-volume @DEFAULT_SINK@ -5%; pkill -RTMIN+10 i3blocks
 alt + shift + i
     pactl set-sink-volume @DEFAULT_SINK@ +5%; pkill -RTMIN+10 i3blocks
+alt + shift + y
+    pactl set-sink-volume @DEFAULT_SINK@ 75%; pkill -RTMIN+10 i3blocks
 alt + shift + s
     ~/.scripts/screencast
 alt + u
@@ -34,6 +36,8 @@ super + u
     ~/.scripts/download_sound
 alt + y
     ~/.scripts/sound_fade
+alt + i
+    rofi -show calc -modi calc -no-show-match -no-sort
 @super + j
     DISPLAY=:0 xdotool key 1 key e sleep 0.05 mousemove 2187 532 sleep 0.05 click 1 sleep 0.05 mousemove 1839 569 sleep 0.05 key 1 sleep 0.05 key e sleep 0.05 click 3 key e sleep 0.05 mousemove 1839 569 sleep 0.05 key 1 key e sleep 0.05 click 3
 @super + h

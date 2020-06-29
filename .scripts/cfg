@@ -12,19 +12,20 @@ if [ -z "$1" ]; then
 fi
 
 declare -A configs
-configs["cfg"]="~/.scripts/cfg"
-configs["i3"]="~/.config/i3/config"
 configs["alias"]="~/.config/aliasrc"
+configs["bash"]="~/.bashrc"
+configs["cfg"]="~/.scripts/cfg"
+configs["dunst"]="~/.config/dunst/dunstrc"
+configs["emacs"]="~/.doom.d/config.el"
+configs["i3"]="~/.config/i3/config"
+configs["i3blocks"]="~/.config/i3blocks/config"
 configs["keys"]="~/.config/sxhkd/sxhkdrc"
+configs["lp"]="~/.config/local_profile"
 configs["mutt"]="~/.mutt/muttrc"
 configs["nvim"]="~/.config/nvim/init.vim"
-configs["bash"]="~/.bashrc"
 configs["p"]="~/.profile"
-configs["dunst"]="~/.config/dunst/dunstrc"
+configs["ssh"]="~/.ssh/config"
 configs["st"]="~/.programs/st/config.h"
-configs["lp"]="~/.config/local_profile"
-configs["emacs"]="~/.doom.d/config.el"
-configs["i3blocks"]="~/.config/i3blocks/config"
 
 usage="usage: $(basename $0) [-h] CONFIG -- easily edit common configuration files 
 

@@ -19,11 +19,15 @@ alias t="rsync -aP"
 alias e="$EDITOR"
 alias se="sudoedit"
 alias findnodot="find . -not -path '*/\.*'"
+alias lc="libreoffice --calc"
+alias proton="~/.local/share/Steam/steamapps/common/Proton\ 5.0/proton"
 
 # git
 alias gu="git rm --cached"
 alias qc="git add .; git commit -m \"\$(date +%F)\"; git push origin master"
-alias gpom="git pull origin master"
+alias gc="git rebase --continue"
+alias gs="git status"
+alias ga="git add -u"
 
 # magic wormhole
 alias ws="wormhole send"

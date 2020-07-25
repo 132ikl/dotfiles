@@ -2,9 +2,9 @@
 
 FOLDER="/home/steven/Documents/Sounds/"
 
-FILE=$(ls -1 $FOLDER | grep wav | sed -e 's/\.wav$//' | rofi -dmenu)
+FILE=$(ls -1 $FOLDER | sed -e 's/\..*$//' | rofi -dmenu)
 if [ -z "$FILE" ]; then exit 0; fi
-mpv --audio-device="pulse/SFX" --speed=1 "$FOLDER/$FILE.wav" --volume=75 & disown
+mpv --audio-device="pulse/SFX" --speed=1 "$FOLDER/$FILE."* --volume=75 & disown
 sleep 0.15
 ID=$(pactl list sink-inputs | grep mpv -m 1 -B16 | head -1 | cut -d "#" -f2 | cut -d " " -f1)
 echo $ID

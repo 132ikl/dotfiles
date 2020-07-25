@@ -28,6 +28,7 @@ export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
+export STEAM_COMPAT_DATA_PATH="$XDG_DATA_HOME"/Steam/steamapps/compatdata
 
 # Set profile variables
 export EDITOR="nvim"

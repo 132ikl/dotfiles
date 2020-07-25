@@ -8,8 +8,8 @@ alt + d
     j4-dmenu-desktop
 alt + o ; {q, y, s, e, f}
     {firefox-developer-edition, "$TERMINAL" ~/YouTube/.start.sh, steam-runtime, emacs, firefox-developer-edition}
-alt + shift + m; {o, p, i, u, n, b, m}
-    {"$TERMINAL" ncmpcpp, mpc toggle, mpc volume +5, mpc volume -5, mpc next, mpc prev, ~/.scripts/restart_song}
+alt + shift + m; {o, p, i, u, y, n, b, m}
+    {"$TERMINAL" ncmpcpp, mpc toggle, mpc volume +5, mpc volume -5, mpc volume 40, mpc next, mpc prev, ~/.scripts/restart_song}
 alt + shift + o
     maim -su -d 1 | upload && mpv /usr/share/sounds/freedesktop/stereo/camera-shutter.oga
 alt + shift + p 
@@ -39,7 +39,7 @@ alt + y
 alt + i
     rofi -show calc -modi calc -no-show-match -no-sort
 @super + j
-    DISPLAY=:0 xdotool key 1 key e sleep 0.05 mousemove 2187 532 sleep 0.05 click 1 sleep 0.05 mousemove 1839 569 sleep 0.05 key 1 sleep 0.05 key e sleep 0.05 click 3 key e sleep 0.05 mousemove 1839 569 sleep 0.05 key 1 key e sleep 0.05 click 3
+    sleep 0.1 && DISPLAY=:0 xdotool key 1 key e sleep 0.05 mousemove 2187 532 sleep 0.05 click 1 sleep 0.05 mousemove 1839 569 sleep 0.05 key 1 sleep 0.05 key e sleep 0.05 click 3 key e sleep 0.05 mousemove 1839 569 sleep 0.05 key 1 key e sleep 0.05 click 3
 @super + h
     DISPLAY=:0 xdotool key 1 key e sleep 0.05 mousemove 2187 532 sleep 0.05 click 1 sleep 0.05 mousemove 1839 652 sleep 0.05 key 1 sleep 0.05 key e sleep 0.05 click 3 key e sleep 0.05 mousemove 1839 652 sleep 0.05 key 1 key e sleep 0.05 click 3
 @super + k

@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 function process {
+    sleep 1
     size="$(du -sm /tmp/screencast.webm | cut -f1)"
     if [ "$size" -gte 1 ]; then
         ffmpeg -hide_banner -loglevel panic -i /tmp/screencast.webm -b 1000k -vf "scale=iw/3:ih/3" -f webm /dev/stdout -y | upload_long

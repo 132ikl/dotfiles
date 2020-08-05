@@ -46,3 +46,5 @@ alt + i
     xdotool type "!r1d20"; sleep 0.05; xdotool key Return
 @super + e
     rofi -modi emoji -show emoji; xdotool type $(xclip -o -se c)
+super + d
+    ~/.scripts/dnd

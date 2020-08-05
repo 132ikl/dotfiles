@@ -108,7 +108,7 @@ assign [title="Slack"] 1
 assign [title="Discord"] 1
 assign [title="Spotify"] 1
 assign [title="Thunderbird"] 1
-assign [title="Riot"] 1
+assign [title="Element"] 1
 
 # i3-gaps config
 for_window [class=".*"] border pixel 0

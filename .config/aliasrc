@@ -21,6 +21,7 @@ alias se="sudoedit"
 alias findnodot="find . -not -path '*/\.*'"
 alias lc="libreoffice --calc"
 alias proton="~/.local/share/Steam/steamapps/common/Proton\ 5.0/proton"
+alias dnd="notify-send DUNST_COMMAND_TOGGLE"
 
 # git
 alias gu="git rm --cached"

@@ -38,6 +38,7 @@ export BROWSER="firefox-developer-edition"
 # misc envvars
 export QT_QPA_PLATFORMTHEME=gtk2
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
+export GPG_TTY=$(tty)
 
 # Misc.
 complete -d cd

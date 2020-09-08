@@ -7,7 +7,6 @@ if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'AndrewRadev/id3.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'joshdick/onedark.vim'
 Plug 'tpope/vim-commentary'
@@ -23,6 +22,8 @@ Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
 Plug 'google/vim-glaive'
 Plug 'junegunn/goyo.vim'
+Plug 'rust-lang/rust.vim'
+" Plug 'vim-syntastic/syntastic'
 call plug#end()
 
 " General display and tab stuff
@@ -112,3 +113,13 @@ endif
 colorscheme onedark
 
 let g:goyo_width=85
+
+" syntastic defaults
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0

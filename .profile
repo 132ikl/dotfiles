@@ -8,7 +8,7 @@ source ~/.config/local_profile
 export PATH=~/.scripts/:$PATH
 export PATH=~/.local/bin:$PATH
 export PATH=~/.local/bin/fakehomes:$PATH
-export PATH=~/.emacs/bin:$PATH
+export PATH=~/.emacs.d/bin:$PATH
 export CDPATH=$CDPATH:~/Projects/
 export CDPATH=$CDPATH:~/Programs/
 

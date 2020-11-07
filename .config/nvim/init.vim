@@ -23,6 +23,8 @@ Plug 'google/vim-codefmt'
 Plug 'google/vim-glaive'
 Plug 'junegunn/goyo.vim'
 Plug 'rust-lang/rust.vim'
+Plug 'wlangstroth/vim-racket'
+Plug 'frazrepo/vim-rainbow'
 " Plug 'vim-syntastic/syntastic'
 call plug#end()
 
@@ -76,24 +78,29 @@ map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 
 " Automatic commands
-autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
-autocmd BufWritePost *Xresources !xrdb %
-autocmd BufWritePost config.h !make -C %:p:h
-" NERDTree autocmds
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+au BufWritePost *sxhkdrc !pkill -USR1 sxhkd
+au BufWritePost *Xresources !xrdb %
+au BufWritePost config.h !make -C %:p:h
+" NERDTree aus
+au BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " auto code fmt
 augroup autoformat_settings
-  autocmd FileType bzl AutoFormatBuffer buildifier
-  autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
-  autocmd FileType dart AutoFormatBuffer dartfmt
-  autocmd FileType go AutoFormatBuffer gofmt
-  autocmd FileType gn AutoFormatBuffer gn
-  autocmd FileType html,css,sass,scss,less,AutoFormatBuffer js-beautify
-  autocmd FileType java AutoFormatBuffer google-java-format
-  autocmd FileType python AutoFormatBuffer black
-  autocmd FileType rust AutoFormatBuffer rustfmt
-  autocmd FileType vue AutoFormatBuffer prettier
+  au FileType bzl AutoFormatBuffer buildifier
+  au FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+  au FileType dart AutoFormatBuffer dartfmt
+  au FileType go AutoFormatBuffer gofmt
+  au FileType gn AutoFormatBuffer gn
+  au FileType html,css,sass,scss,less,AutoFormatBuffer js-beautify
+  au FileType java AutoFormatBuffer google-java-format
+  au FileType python AutoFormatBuffer black
+  au FileType rust AutoFormatBuffer rustfmt
+  au FileType vue AutoFormatBuffer prettier
 augroup END
+
+au BufReadPost *.rkt,*.rktl set filetype=racket
+au FileType racket set lisp
+au FileType racket set autoindent
+au BufEnter *.rkt,*.rktl call rainbow#load()
 
 " ignore virtualenv
 let g:python_host_prog='/usr/bin/python'

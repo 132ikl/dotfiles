@@ -40,6 +40,8 @@
 (setq rainbow-delimiters-max-face-count 9)
 
 ;; port vim config
+(setq display-line-numbers 'relative)
+
 (define-key evil-normal-state-map "J" 'centaur-tabs-backward)
 (define-key evil-normal-state-map "K" 'centaur-tabs-forward)
 

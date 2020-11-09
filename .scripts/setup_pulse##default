@@ -8,9 +8,9 @@ pactl load-module module-loopback latency_msec=1 sink="MicAndSFX" source="$INPUT
 pactl load-module module-loopback latency_msec=1 sink="MicAndSFX" source="SFX.monitor"
 pactl load-module module-loopback latency_msec=1 sink="$OUTPUT_DEVICE" source="SFX.monitor"
 
-
-pactl load-module module-remap-source master="SFX.monitor" master_channel_map=front-left,front-right channels=2 channel_map=mono,mono
-pactl load-module module-remap-source master="MicAndSFX.monitor" master_channel_map=front-left,front-right channels=2 channel_map=mono,mono
+pactl load-module module-remap-source master="SFX.monitor" master_channel_map=left,right channels=2 channel_map=mono,mono
+pactl load-module module-remap-source master="MicAndSFX.monitor" master_channel_map=left,right channels=2 channel_map=mono,mono
 
 pactl set-default-source "MicAndSFX.monitor.remapped"
 pactl set-default-sink "$OUTPUT_DEVICE"
+pactl load-module module-loopback latency_msec=1 sink="MicAndSFX" source="$INPUT_DEVICE"

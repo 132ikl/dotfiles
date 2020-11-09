@@ -22,7 +22,7 @@ systemctl --user import-environment DISPLAY
 xrdb -load ~/.Xresources
 
 # set audio settings
-~/.scripts/setup_pulse
+#~/.scripts/setup_pulse
 pulsemixer --set-volume=75
 
 

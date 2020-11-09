@@ -1,5 +1,0 @@
-sleep 1
-#slack & disown
-#discord & disown
-thunderbird & disown
-setxkbmap -option "compose:rctrl"

@@ -9,6 +9,8 @@ export PATH=~/.scripts/:$PATH
 export PATH=~/.local/bin:$PATH
 export PATH=~/.local/bin/fakehomes:$PATH
 export PATH=~/.emacs.d/bin:$PATH
+export PATH=~/.local/share/cargo/bin/:$PATH
+
 export CDPATH=$CDPATH:~/Projects/
 export CDPATH=$CDPATH:~/Programs/
 

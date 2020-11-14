@@ -9,7 +9,7 @@
       user-mail-address "132@ikl.sh")
 
 (setq doom-theme 'doom-one)
-(setq doom-font (font-spec :family "DejaVu Sans Mono" :size 14))
+(setq doom-font (font-spec :family "DejaVu Sans Mono" :size 16))
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -25,6 +25,8 @@
 
 (define-key evil-normal-state-map "J" 'centaur-tabs-backward) ; qutebrowser tabs
 (define-key evil-normal-state-map "K" 'centaur-tabs-forward)
+(define-key evil-normal-state-map (kbd "C-J") 'centaur-tabs-move-current-tab-to-left) ; qutebrowser tabs
+(define-key evil-normal-state-map (kbd "C-K") 'centaur-tabs-move-current-tab-to-right)
 
 ;; allow ivy to select prompt
 (setq ivy-use-selectable-prompt t)

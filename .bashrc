@@ -8,7 +8,7 @@
 # prompt
 get_w(){ if [ "$(pwd)" = "$(readlink -f $HOME)" ] || [ "$(pwd)" = "$(readlink -f $HOME)/" ];then W='~';else W=$(echo $(pwd)|sed 's@'"$(readlink -f $HOME)"'@~@');fi;if [ $(echo $W|grep -o '/'|wc -l) -gt 5 ];then echo $W|cut -d'/' -f1-5|xargs -I{} echo {}"/../${W##*/}";else echo $W;fi }
 git_status(){ branch="$(git branch 2>/dev/null | grep '^*' | colrm 1 2)"; if [ ! -z "$branch" ]; then echo " $(git_color)($branch)$(tput rmso)"; fi; }
-git_color(){ color="$(tput setaf 6)"; diff=$(git diff 2>&-); [ -z $diff ] && color="$(tput setaf 3)"; git status 2>&- | grep -q behind && color="$(tput smso)$color"; echo "$color"; }
+git_color(){ color="$(tput setaf 6)"; diff=$(git diff 2>&-); [[ ! -z "$diff" ]] && color="$(tput setaf 3)"; git status 2>&- | grep -q behind && color="$(tput smso)$color"; echo "$color"; }
 setps1(){ PS1="\[$(tput bold)\]\[$(tput setaf 6)\][\[$(tput setaf 3)\]\u\[$(tput setaf 69)\]@\[$(tput setaf ${HOST_COLOR:-4})\]\h \[$(tput setaf 1)\]"$(get_w)"\[$(tput setaf 6)\]]\[$(tput bold)\]\$(git_status)\[$(tput setaf 7)\] \\$ \[$(tput sgr0)\]"; }
 PROMPT_COMMAND=setps1
 # vi

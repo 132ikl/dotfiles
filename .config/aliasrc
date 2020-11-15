@@ -22,6 +22,8 @@ alias findnodot="find . -not -path '*/\.*'"
 alias lc="libreoffice --calc"
 alias proton="~/.local/share/Steam/steamapps/common/Proton\ 5.0/proton"
 alias dnd="notify-send DUNST_COMMAND_TOGGLE"
+alias reboot="systemctl reboot"
+alias shutdown="systemctl poweroff"
 
 # git
 alias gu="git rm --cached"

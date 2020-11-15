@@ -33,9 +33,8 @@ export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
 export STEAM_COMPAT_DATA_PATH="$XDG_DATA_HOME"/Steam/steamapps/compatdata
 
 # Set profile variables
-export EDITOR="emacs"
+export EDITOR="nvim"
 export TERMINAL="st"
-export BROWSER="firefox-developer-edition"
 
 # misc envvars
 export QT_QPA_PLATFORMTHEME=gtk2

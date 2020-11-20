@@ -48,8 +48,13 @@
       (setq default-directory (projectile-project-root))))
 (add-hook! 'find-file-hook #'set-default-dir)
 
+(unless (display-graphic-p) 
+    ;; Remove any keybindings and theme setup here
+  )
+
 ;;;; LANG
 ;;;;
+
 ;;;; VISUAL
 ;; treemacs
 (setq treemacs-width 45)

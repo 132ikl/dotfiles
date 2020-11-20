@@ -35,6 +35,7 @@ export STEAM_COMPAT_DATA_PATH="$XDG_DATA_HOME"/Steam/steamapps/compatdata
 # Set profile variables
 export EDITOR="nvim"
 export TERMINAL="st"
+export TERM="xterm-256color"
 
 # misc envvars
 export QT_QPA_PLATFORMTHEME=gtk2

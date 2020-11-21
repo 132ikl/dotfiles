@@ -28,6 +28,7 @@ alias shutdown="systemctl poweroff"
 # git
 alias gu="git rm --cached"
 alias qc="git add .; git commit -m \"\$(date +%F)\"; git push origin master"
+alias yqc="yadm add -u; yadm commit -m \"\$(date +%F)\"; yadm push origin master"
 alias gc="git rebase --continue"
 alias gs="git status"
 alias ga="git add -u"

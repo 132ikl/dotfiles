@@ -1,7 +1,7 @@
 alt + period
     /usr/bin/bwmenu --auto-lock 3600
 alt + Return
-    ~/.programs/st/st
+    alacritty
 alt + shift + d
     ~/.programs/dmenu/dmenu_run
 alt + d

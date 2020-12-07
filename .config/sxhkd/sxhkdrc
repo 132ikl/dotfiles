@@ -6,10 +6,10 @@ alt + shift + d
     ~/.programs/dmenu/dmenu_run
 alt + d
     j4-dmenu-desktop
-alt + o ; {q, y, s, e, f}
-    {firefox-developer-edition, "$TERMINAL" ~/YouTube/.start.sh, steam-runtime, emacs, firefox-developer-edition}
+alt + o ; {e, f}
+    {emacs, firefox-developer-edition}
 alt + shift + m; {o, p, i, u, y, n, b, m}
-    {"$TERMINAL" ncmpcpp, mpc toggle, mpc volume +5, mpc volume -5, mpc volume 40, mpc next, mpc prev, ~/.scripts/restart_song}
+    {"$TERMINAL" -e ncmpcpp, mpc toggle, mpc volume +5, mpc volume -5, mpc volume 40, mpc next, mpc prev, ~/.scripts/restart_song}
 alt + shift + o
     maim -su -d 1 | upload && mpv /usr/share/sounds/freedesktop/stereo/camera-shutter.oga
 alt + shift + p 

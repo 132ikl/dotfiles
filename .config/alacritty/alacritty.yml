@@ -8,7 +8,10 @@ font:
     family: DejaVu Sans Mono
   size: 11.5
 
-background_opacity: .95
+background_opacity: 0.95
+
+env:
+  TERM: xterm-256color
 
 key_bindings:
   - { key: PageUp, mods: Control|Shift, action: IncreaseFontSize }

@@ -28,19 +28,20 @@
 (define-key evil-normal-state-map (kbd "C-J") 'centaur-tabs-move-current-tab-to-left) ; qutebrowser tabs
 (define-key evil-normal-state-map (kbd "C-K") 'centaur-tabs-move-current-tab-to-right)
 
+;; scpaste
+(after! scpaste
+  (setq scpaste-http-destination "https://p.ikl.sh"
+        scpaste-scp-destination "gaghiel:/var/www/paste"
+        scpaste-user-name "steven"
+        scpaste-user-address "mailto:132@ikl.sh"
+        scpaste-make-name-function 'scpaste-make-name-from-buffer-name))
+
 ;; allow ivy to select prompt
 (setq ivy-use-selectable-prompt t)
 
 ;; company
 (setq company-dabbrev-downcase 0)
 (setq company-idle-delay 0.1)
-;; for some reason this activates twice
-;; (defun company-insert-parens (candidate) ;; auto insert parens after method
-;;   (interactive)
-;;   (when (string= (plist-get (text-properties-at 0 candidate) 'type) "METHOD")
-;;     (insert "()")
-;;     (backward-char)))
-;; (add-hook! 'company-completion-finished-hook #'company-insert-parens t)
 
 ;; use projectile root dir as default if set
 (defun set-default-dir ()
@@ -53,8 +54,11 @@
   )
 
 ;;;; LANG
-;;;;
-
+;; java (pain)
+(setq lsp-java-java-path "/usr/lib/jvm/java-11-openjdk/bin/java")
+(setq lsp-java-configuration-runtimes '[(:name "JavaSE-8"
+                                         :path "/usr/lib/jvm/java-8-openjdk/"
+                                         :default t)]);;;;
 ;;;; VISUAL
 ;; treemacs
 (setq treemacs-width 45)

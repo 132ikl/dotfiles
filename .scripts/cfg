@@ -12,6 +12,7 @@ if [ -z "$1" ]; then
 fi
 
 declare -A configs
+configs["alacritty"]=~"/.config/alacritty/alacritty.yml"
 configs["alias"]=~"/.config/aliasrc"
 configs["bash"]=~"/.bashrc"
 configs["cfg"]=~"/.scripts/cfg"

@@ -48,3 +48,6 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
+
+(package! scpaste
+  :recipe (:host nil :repo "https://git.sr.ht/~technomancy/scpaste"))

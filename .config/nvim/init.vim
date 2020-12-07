@@ -25,6 +25,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'wlangstroth/vim-racket'
 Plug 'frazrepo/vim-rainbow'
+Plug 'AndrewRadev/id3.vim'
 " Plug 'vim-syntastic/syntastic'
 call plug#end()
 

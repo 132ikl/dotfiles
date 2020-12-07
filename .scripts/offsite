@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+BACKUP_DIR="/backups/minecraft"
+ARCHIVE_DIR="/mnt/HDD/archive/cool"
+
+ssh cool cd $BACKUP_DIR\; find . -type f -mtime -3 > /tmp/TMPFILES
+
+rsync -a --files-from=/tmp/TMPFILES cool:$BACKUP_DIR $ARCHIVE_DIR
+
+# remove old files
+new=($(cat /tmp/TMPFILES | cut -d "/" -f2 | uniq -d))
+cd $ARCHIVE_DIR
+for i in *; do
+    if [[ ! " ${new[@]} " =~ " ${i} " ]]; then
+        rm -rf "$i"
+        echo $i
+    fi
+done
+
+rm /tmp/TMPFILES

@@ -14,7 +14,7 @@ fi
 
 color="#c9c9c9"
 
-packagelist='linux nvidia'
+packagelist='nvidia'
 for package in $(checkupdates | cut -d" " -f1); do
 	for i in $packagelist; do
 		if [ "$i" == "$package" ]; then

@@ -48,13 +48,17 @@ alias debian="sudo docker run -v \$(pwd):/\$(pwd | awk -F/ '{ for (i = NF; i > 0
 # tmux
 alias tmux="TERM=screen-256color tmux"
 
-# Easy downloading
+# Shortcuts
+## Easy downloading
 ## using OLDPWD because cd - writes to stdout and OLDPWD will send to ~ if unset
 dl() { if [ -n "$2" ]; then cd "$2"; fi; curl -LOJ $1; if [ -n "$2" ]; then cd $OLDPWD; fi; }
 tardl() { curl -s -L --output - "$1" | tar xfz -; }
 replace() { egrep -lRZ "$1" . | xargs -0 -l sed -i -e "s/$1/$2/g"; }
 cd() { if [ -z "$1" ]; then cd ~; else builtin cd "$*" >/dev/null; fi; }
 yadmqc() { yadm add -u; yadm commit -m "$(date +%F)"; yadm push; }
+mp4() { ffmpeg -i "$1" "${1%.*}.mp4"; }
+mp3() { ffmpeg -y -i "$1" -codec:a libmp3lame -q:a 4 -map_metadata 0 -id3v2_version 3 -write_id3v1 1 "${2%.*}.mp3";}
+mp3folder() { DIR="./$(basename "$1") (MP3)"; mkdir -p "$DIR"; for i in "$1"/*.flac; do file=$(basename "$i"); mp3 "$i" "$DIR/$file"; done; cp "$1"*.jpg "$DIR/"; }
 
 # Package management
 alias whatprovides="yay -Fs"

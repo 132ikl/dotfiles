@@ -9,7 +9,7 @@ alt + d
 alt + o ; {e, f}
     {emacs, firefox-developer-edition}
 alt + shift + m; {o, p, i, u, y, n, b, m}
-    {"$TERMINAL" -e ncmpcpp, mpc toggle, mpc volume +5, mpc volume -5, mpc volume 40, mpc next, mpc prev, ~/.scripts/restart_song}
+    {"$TERMINAL" -e ncmpcpp, mpcu toggle, mpcu volume +5, mpcu volume -5, mpcu volume 40, mpcu next, mpcu prev}
 alt + shift + o
     maim -su -d 1 | upload && mpv /usr/share/sounds/freedesktop/stereo/camera-shutter.oga
 alt + shift + p 
@@ -42,9 +42,5 @@ alt + i
     sleep 0.1 && DISPLAY=:0 xdotool key 1 key e sleep 0.05 mousemove 2187 532 sleep 0.05 click 1 sleep 0.05 mousemove 1839 569 sleep 0.05 key 1 sleep 0.05 key e sleep 0.05 click 3 key e sleep 0.05 mousemove 1839 569 sleep 0.05 key 1 key e sleep 0.05 click 3
 @super + h
     DISPLAY=:0 xdotool key 1 key e sleep 0.05 mousemove 2187 532 sleep 0.05 click 1 sleep 0.05 mousemove 1839 652 sleep 0.05 key 1 sleep 0.05 key e sleep 0.05 click 3 key e sleep 0.05 mousemove 1839 652 sleep 0.05 key 1 key e sleep 0.05 click 3
-@super + k
-    xdotool type "!r1d20"; sleep 0.05; xdotool key Return
 @super + e
     rofi -modi emoji -show emoji; xdotool type $(xclip -o -se c)
-super + d
-    ~/.scripts/dnd

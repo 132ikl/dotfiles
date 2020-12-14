@@ -6,7 +6,7 @@ window:
 font:
   normal:
     family: DejaVu Sans Mono
-  size: 11.5
+  size: 7.5
 
 background_opacity: 0.95
 

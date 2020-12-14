@@ -1,0 +1,2 @@
+mpc "$@"
+pkill -RTMIN+12 i3blocks

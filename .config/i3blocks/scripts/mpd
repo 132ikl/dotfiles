@@ -1,0 +1,22 @@
+#!/bin/bash
+
+exec-mpc() {
+    mpc $* &> /dev/null
+}
+
+case $BLOCK_BUTTON in
+  1) exec-mpc toggle ;;
+  2) exec-mpc stop   ;;
+  3) showname=$((!$showname)); echo $showname > $SHOWNAME_PATH ;;
+  4) exec-mpc pre    ;;
+  5) exec-mpc next   ;;
+esac
+
+status=$(mpc status | sed -n 's/^\[\([^])]*\)\].*$/\1/p')
+icon=""
+case $status in
+  playing) icon=⏵ ;;
+  paused)  icon=⏸  ;;
+  *)       icon="" ;;
+esac
+echo $icon $(mpc current)

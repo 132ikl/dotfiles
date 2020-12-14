@@ -35,7 +35,6 @@
         scpaste-user-name "steven"
         scpaste-user-address "mailto:132@ikl.sh"
         scpaste-make-name-function 'scpaste-make-name-from-buffer-name))
-
 ;; allow ivy to select prompt
 (setq ivy-use-selectable-prompt t)
 
@@ -49,8 +48,8 @@
       (setq default-directory (projectile-project-root))))
 (add-hook! 'find-file-hook #'set-default-dir)
 
-(unless (display-graphic-p) 
-    ;; Remove any keybindings and theme setup here
+(unless (display-graphic-p)
+  ;; Remove any keybindings and theme setup here
   )
 
 ;;;; LANG

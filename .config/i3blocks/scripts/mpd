@@ -8,8 +8,8 @@ case $BLOCK_BUTTON in
   1) exec-mpc toggle ;;
   2) exec-mpc stop   ;;
   3) showname=$((!$showname)); echo $showname > $SHOWNAME_PATH ;;
-  4) exec-mpc pre    ;;
-  5) exec-mpc next   ;;
+  4) exec-mpc vol +2 ;;
+  5) exec-mpc vol -2  ;;
 esac
 
 status=$(mpc status | sed -n 's/^\[\([^])]*\)\].*$/\1/p')

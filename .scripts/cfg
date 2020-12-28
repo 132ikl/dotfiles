@@ -1,14 +1,14 @@
 #!/bin/bash
 
 if [ -z "$EDITOR" ]; then
-    EDITOR="vi"
+	EDITOR="vi"
 else
-    EDITOR="$EDITOR"
+	EDITOR="$EDITOR"
 fi
 
 if [ -z "$1" ]; then
-    echo "No config file provided. Type \"$(basename $0) --help\" for usage."
-    exit 1
+	echo "No config file provided. Type \"$(basename $0) --help\" for usage."
+	exit 1
 fi
 
 declare -A configs
@@ -27,11 +27,11 @@ configs["keys"]=~"/.config/sxhkd/sxhkdrc"
 configs["local"]=~"/.config/local_profile"
 configs["lp"]=~"/.config/local_profile"
 configs["minirss"]=~"/.config/minirss.cfg"
-configs["mutt"]=~"/.mutt/muttrc"
 configs["nvim"]=~"/.config/nvim/init.vim"
 configs["p"]=~"/.profile"
 configs["ssh"]=~"/.ssh/config"
-configs["st"]=~"/.programs/st/config.h"
+configs["mpd"]=~"/.config/mpd/mpd.conf"
+configs["paru"]=~"/.config/paru/paru.conf"
 
 usage="usage: $(basename $0) [-h] CONFIG -- easily edit common configuration files 
 
@@ -41,18 +41,18 @@ options:
 supported configs:"
 
 if [ "$1" = "-h" -o "$1" = "--help" ]; then
-    echo "$usage"
-    for i in "${!configs[@]}"; do
-        echo "     ${i}: ${configs[$i]}"
-    done
-    exit 0
+	echo "$usage"
+	for i in "${!configs[@]}"; do
+		echo "     ${i}: ${configs[$i]}"
+	done
+	exit 0
 fi
 
 for i in "${!configs[@]}"; do
-    if [ "$i" = "$1" ]; then
-        eval temp_path=${configs[$i]}
-        "$EDITOR" "$temp_path"
-        exit 0
-    fi
+	if [ "$i" = "$1" ]; then
+		eval temp_path=${configs[$i]}
+		"$EDITOR" "$temp_path"
+		exit 0
+	fi
 done
 echo "Config file $1 not found. Type \"$(basename $0) --help\" for supported configs."

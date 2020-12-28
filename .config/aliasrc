@@ -58,7 +58,11 @@ cd() { if [ -z "$1" ]; then cd ~; else builtin cd "$*" >/dev/null; fi; }
 yadmqc() { yadm add -u; yadm commit -m "$(date +%F)"; yadm push; }
 mp4() { ffmpeg -i "$1" "${1%.*}.mp4"; }
 mp3() { ffmpeg -y -i "$1" -codec:a libmp3lame -q:a 4 -map_metadata 0 -id3v2_version 3 -write_id3v1 1 "${2%.*}.mp3";}
+ffinplace() { echo "tmp.${1##*.}"; ffmpeg -i "$1" "${@:2}" "tmp.${1##*.}"; mv "tmp.${1##*.}" "$1"; }
 mp3folder() { DIR="./$(basename "$1") (MP3)"; mkdir -p "$DIR"; for i in "$1"/*.flac; do file=$(basename "$i"); mp3 "$i" "$DIR/$file"; done; cp "$1"*.jpg "$DIR/"; }
+download_all() { cat > /tmp/filelist; rsync -arP --files-from=/tmp/filelist "$1":"$2" ./; rm /tmp/filelist; }
+rm_progress() { rm -rv "$1" | pv -l -s $( du -a "$1" | wc -l ) > /dev/null; }
+sudo_rm_progress() { sudo rm -rv "$1" | sudo pv -l -s $( sudo du -a "$1" | wc -l ) > /dev/null; }
 
 # Package management
 alias whatprovides="yay -Fs"

@@ -9,4 +9,10 @@ audio_output {
         name            "pulse audio"
 }
 
+playlist_plugin {
+    name "cue"
+    enabled "true"
+    as_directory "no"
+}
+
 bind_to_address "0.0.0.0"

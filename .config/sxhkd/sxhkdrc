@@ -6,8 +6,8 @@ alt + shift + d
     ~/.programs/dmenu/dmenu_run
 alt + d
     j4-dmenu-desktop
-alt + o ; {e, f}
-    {emacs, firefox-developer-edition}
+alt + o ; {e, f, y}
+    {emacs, firefox-developer-edition, freetube-bin}
 alt + shift + m; {o, p, i, u, y, n, b, m}
     {"$TERMINAL" -e ncmpcpp, mpcu toggle, mpcu volume +5, mpcu volume -5, mpcu volume 40, mpcu next, mpcu prev}
 alt + shift + o

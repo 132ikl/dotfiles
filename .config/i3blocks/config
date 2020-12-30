@@ -14,9 +14,6 @@ signal=11
 interval=once
 signal=10
 
-[battery BAT0]
-interval=5
-
 [date]
 command=date '+%F %I:%M %p'
 interval=5
